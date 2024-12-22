@@ -1,0 +1,7 @@
+<section>
+  <div class="product-grid">
+    @for (product of products(); track $index) {
+      <entity-product-card [product]="product" />
+    }
+  </div>
+</section>

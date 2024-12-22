@@ -1,0 +1,1 @@
+export * from './ui/product-overview-page/product-overview-page.component';
