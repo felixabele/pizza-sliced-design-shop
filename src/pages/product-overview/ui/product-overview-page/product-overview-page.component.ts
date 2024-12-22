@@ -7,12 +7,11 @@ import {
 } from '~/entities/Product';
 
 @Component({
-  selector: 'app-product-overview-page',
-  standalone: true,
-  imports: [ProductCardComponent],
-  templateUrl: './product-overview-page.component.html',
-  styleUrl: './product-overview-page.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-product-overview-page',
+    imports: [ProductCardComponent],
+    templateUrl: './product-overview-page.component.html',
+    styleUrl: './product-overview-page.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductOverviewPageComponent {
   public products: Signal<Product[] | undefined>;
