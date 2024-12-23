@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import {
   Product,
@@ -7,11 +7,11 @@ import {
 } from '~/entities/Product';
 
 @Component({
-    selector: 'app-product-overview-page',
-    imports: [ProductCardComponent],
-    templateUrl: './product-overview-page.component.html',
-    styleUrl: './product-overview-page.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-product-overview-page',
+  imports: [ProductCardComponent],
+  standalone: true,
+  templateUrl: './product-overview-page.component.html',
+  styleUrl: './product-overview-page.component.scss',
 })
 export class ProductOverviewPageComponent {
   public products: Signal<Product[] | undefined>;
