@@ -1,6 +1,11 @@
 <section>
+  <feature-product-filter
+    [allProducts]="allProducts()"
+    [(filteredProducts)]="filteredProducts"
+  />
+
   <div class="product-grid">
-    @for (product of products(); track $index) {
+    @for (product of filteredProducts(); track $index) {
       <entity-product-card [product]="product" />
     }
   </div>
