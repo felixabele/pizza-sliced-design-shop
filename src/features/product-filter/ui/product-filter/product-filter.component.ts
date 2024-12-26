@@ -7,17 +7,17 @@ import {
   input,
   model,
 } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatSliderModule } from '@angular/material/slider';
 import { Product } from '~/entities/Product';
 import { ProductFilterService } from '../../model/product-filter.service';
 import { toObservable } from '@angular/core/rxjs-interop';
+import { PriceFilterComponent } from '../price-filter/price-filter.component';
 
 @Component({
   selector: 'feature-product-filter',
-  imports: [MatSliderModule, FormsModule],
+  imports: [PriceFilterComponent],
   standalone: true,
   templateUrl: './product-filter.component.html',
+  styleUrl: './product-filter.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductFilterComponent {
@@ -26,35 +26,11 @@ export class ProductFilterComponent {
   public allProducts = input.required<Product[]>();
   public filteredProducts = model<Product[]>();
 
-  public selectedMinPrice?: number;
-  public selectedMaxPrice?: number;
-
-  public globalMinPrice = computed(() =>
-    this.allProducts().reduce((min, p) => Math.min(min, p.price), Infinity),
-  );
-  public globalMaxPrice = computed(() =>
-    this.allProducts().reduce((max, p) => Math.max(max, p.price), -Infinity),
-  );
-
   constructor() {
-    effect(() => {
-      this.selectedMinPrice = this.globalMinPrice();
-      this.selectedMaxPrice = this.globalMaxPrice();
-    });
-
-    effect(() => {
-      this.productFilterService.initProducts(this.allProducts());
-    });
+    effect(() => this.productFilterService.initProducts(this.allProducts()));
 
     toObservable(this.productFilterService.filteredProducts).subscribe(
       (products) => this.filteredProducts.set(products),
-    );
-  }
-
-  public onPriceChange(): void {
-    this.productFilterService.setPriceFilter(
-      this.selectedMinPrice,
-      this.selectedMaxPrice,
     );
   }
 }

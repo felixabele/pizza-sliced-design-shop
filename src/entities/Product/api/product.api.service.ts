@@ -10,24 +10,27 @@ export class ProductApiService {
     return of([
       {
         id: 1,
-        name: 'Product 1',
-        shortDescription: 'Description for product 1',
+        name: 'Pizza Mare',
+        shortDescription: 'Pizza with delicious fish, cheese and vegetables',
         image: '/assets/products/product-1.jpg',
         price: 100,
+        tags: ['fish', 'tomato', 'basil'],
       },
       {
         id: 2,
-        name: 'Product 2',
-        shortDescription: 'Description for product 2',
+        name: 'Pizza Prosciutto',
+        shortDescription: 'Pizza with delicious ham, cheese and mushrooms',
         image: '/assets/products/product-2.jpg',
         price: 200,
+        tags: ['ham', 'mushrooms'],
       },
       {
         id: 3,
-        name: 'Product 3',
-        shortDescription: 'Description for product 3',
+        name: 'Pizza Salami',
+        shortDescription: 'Pizza with delicious salami, cheese and mushrooms',
         image: '/assets/products/product-3.jpg',
         price: 300,
+        tags: ['salami', 'mushrooms'],
       },
     ]);
   }

@@ -9,7 +9,7 @@ export class ProductFilterService {
     this.allProducts().filter((product) => this._matchesPrice(product)),
   );
 
-  private allProducts = signal<Product[]>([]);
+  public readonly allProducts = signal<Product[]>([]);
   private minPriceFilter = signal<number | undefined>(undefined);
   private maxPriceFilter = signal<number | undefined>(undefined);
 

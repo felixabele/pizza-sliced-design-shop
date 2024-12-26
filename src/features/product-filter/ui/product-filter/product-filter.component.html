@@ -1,16 +1,3 @@
-{{ selectedMinPrice }}
-<mat-slider [min]="globalMinPrice()" [max]="globalMaxPrice()">
-  <input
-    [value]="globalMinPrice()"
-    [(ngModel)]="selectedMinPrice"
-    (valueChange)="onPriceChange()"
-    matSliderStartThumb
-  />
-  <input
-    [value]="globalMaxPrice()"
-    [(ngModel)]="selectedMaxPrice"
-    (valueChange)="onPriceChange()"
-    matSliderEndThumb
-  />
-</mat-slider>
-{{ selectedMaxPrice }}
+<section class="product-filter">
+  <feature-price-filter />
+</section>
