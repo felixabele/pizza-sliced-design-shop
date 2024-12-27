@@ -6,10 +6,13 @@ import { Product } from '~/entities/Product';
 })
 export class ProductFilterService {
   public filteredProducts = computed(() =>
-    this.allProducts().filter((product) => this._matchesPrice(product)),
+    this.allProducts().filter(
+      (product) => this._matchesPrice(product) && this._matchesTags(product),
+    ),
   );
 
   public readonly allProducts = signal<Product[]>([]);
+  public tagsFilter = signal<string[]>([]);
   private minPriceFilter = signal<number | undefined>(undefined);
   private maxPriceFilter = signal<number | undefined>(undefined);
 
@@ -22,6 +25,14 @@ export class ProductFilterService {
     this.maxPriceFilter.set(maxPrice);
   }
 
+  public addFilterTag(tag: string): void {
+    this.tagsFilter.update((tags) => [...tags, tag]);
+  }
+
+  public removeFilterTag(tag: string): void {
+    this.tagsFilter.update((tags) => tags.filter((t) => t !== tag));
+  }
+
   private _matchesPrice(product: Product): boolean {
     const minPrice = this.minPriceFilter();
     const maxPrice = this.maxPriceFilter();
@@ -29,5 +40,13 @@ export class ProductFilterService {
     const matchesMaxPrice = maxPrice === undefined || product.price <= maxPrice;
 
     return matchesMinPrice && matchesMaxPrice;
+  }
+
+  private _matchesTags(product: Product): boolean {
+    const selectedTags = this.tagsFilter();
+    return (
+      selectedTags.length === 0 ||
+      selectedTags.every((tag) => product.tags.includes(tag))
+    );
   }
 }

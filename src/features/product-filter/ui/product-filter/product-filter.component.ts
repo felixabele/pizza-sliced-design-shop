@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   effect,
   inject,
   input,
@@ -11,10 +10,11 @@ import { Product } from '~/entities/Product';
 import { ProductFilterService } from '../../model/product-filter.service';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { PriceFilterComponent } from '../price-filter/price-filter.component';
+import { TagsFilterComponent } from '../tags-filter/tags-filter.component';
 
 @Component({
   selector: 'feature-product-filter',
-  imports: [PriceFilterComponent],
+  imports: [PriceFilterComponent, TagsFilterComponent],
   standalone: true,
   templateUrl: './product-filter.component.html',
   styleUrl: './product-filter.component.scss',

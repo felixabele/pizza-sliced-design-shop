@@ -22,7 +22,7 @@ export class ProductApiService {
         shortDescription: 'Pizza with delicious ham, cheese and mushrooms',
         image: '/assets/products/product-2.jpg',
         price: 200,
-        tags: ['ham', 'mushrooms'],
+        tags: ['ham', 'mushrooms', 'basil'],
       },
       {
         id: 3,
