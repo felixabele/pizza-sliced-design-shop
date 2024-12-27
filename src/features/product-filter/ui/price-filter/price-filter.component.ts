@@ -2,10 +2,11 @@ import { Component, computed, effect, inject } from '@angular/core';
 import { ProductFilterService } from '../../model/product-filter.service';
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'feature-price-filter',
-  imports: [FormsModule, MatSliderModule],
+  imports: [FormsModule, MatSliderModule, CurrencyPipe],
   templateUrl: './price-filter.component.html',
   standalone: true,
 })

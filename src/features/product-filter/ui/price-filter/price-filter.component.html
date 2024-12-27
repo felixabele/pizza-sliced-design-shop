@@ -1,5 +1,5 @@
 <section class="product-price-filter">
-  {{ selectedMinPrice }}
+  <span>{{ selectedMinPrice | currency }}</span>
   <mat-slider [min]="globalMinPrice()" [max]="globalMaxPrice()">
     <input
       [value]="globalMinPrice()"
@@ -14,5 +14,5 @@
       matSliderEndThumb
     />
   </mat-slider>
-  {{ selectedMaxPrice }}
+  <span>{{ selectedMaxPrice | currency }}</span>
 </section>
