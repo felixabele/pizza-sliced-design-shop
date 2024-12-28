@@ -25,8 +25,9 @@ export class CartStateService {
 
     if (existingItem) {
       existingItem.quantity += 1;
+      existingItem.sum = existingItem.quantity * existingItem.price;
     } else {
-      itemsInCart.push({ productId, price, name, quantity: 1 });
+      itemsInCart.push({ productId, price, name, quantity: 1, sum: price });
     }
 
     this.cartItems.set(itemsInCart);

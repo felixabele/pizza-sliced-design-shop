@@ -1,0 +1,7 @@
+<section>
+  @if (cartService.cartItems().length) {
+    <cart-page-filled-cart />
+  } @else {
+    <cart-page-empty-cart />
+  }
+</section>
