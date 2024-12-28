@@ -1,10 +1,19 @@
-import { computed, effect, Injectable, Signal, signal } from '@angular/core';
+import { computed, inject, Injectable, Signal, signal } from '@angular/core';
 import { CartItem } from './cart.model';
+import { LocalStorageService } from '~/shared/api';
+
+const LOCAL_STORAGE_KEY = 'cart';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartStateService {
+  private readonly localStoreService = inject(LocalStorageService);
+
+  constructor() {
+    this._restoreCart();
+  }
+
   public cartItems = signal<CartItem[]>([]);
   public totalPrice: Signal<number> = computed(() => {
     return this.cartItems().reduce((acc, item) => {
@@ -31,5 +40,15 @@ export class CartStateService {
     }
 
     this.cartItems.set(itemsInCart);
+    this._persistCart();
+  }
+
+  private _persistCart(): void {
+    this.localStoreService.setItem(LOCAL_STORAGE_KEY, this.cartItems());
+  }
+
+  private _restoreCart(): void {
+    const cartItems = this.localStoreService.getItem(LOCAL_STORAGE_KEY);
+    this.cartItems.set(cartItems || []);
   }
 }
