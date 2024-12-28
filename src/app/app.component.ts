@@ -10,6 +10,4 @@ import { HeaderComponent } from '~/widgets';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'fsd-shop';
-}
+export class AppComponent {}
