@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { CartStateService } from '~/entities/Cart';
 import { MatTableModule } from '@angular/material/table';
 import { CurrencyPipe } from '@angular/common';
+import { CartItemQuantityComponent } from '~/features/cart-item-quantity';
 
 @Component({
   selector: 'cart-page-filled-cart',
-  imports: [MatTableModule, CurrencyPipe],
+  imports: [MatTableModule, CurrencyPipe, CartItemQuantityComponent],
   templateUrl: './filled-cart.component.html',
 })
 export class FilledCartComponent {

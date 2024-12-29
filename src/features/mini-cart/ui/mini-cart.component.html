@@ -1,8 +1,9 @@
-<mat-icon
-  aria-hidden="false"
-  aria-label="Shopping Cart"
-  fontIcon="shopping_cart"
-  class="shopping-cart"
-  [matBadge]="cartService.itemCount()"
-  routerLink="/cart"
-/>
+<a routerLink="/cart">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Shopping Cart"
+    fontIcon="shopping_cart"
+    class="shopping-cart"
+    [matBadge]="cartService.itemCount()"
+  />
+</a>

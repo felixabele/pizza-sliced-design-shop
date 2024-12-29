@@ -43,6 +43,27 @@ export class CartStateService {
     this._persistCart();
   }
 
+  public removeItem(productId: number): void {
+    const itemsInCart = [...this.cartItems()];
+
+    const matchingIndex = itemsInCart.findIndex(
+      (item) => item.productId === productId,
+    );
+
+    const matchingItem = itemsInCart[matchingIndex];
+
+    // remove from cart if quantity is 1 else decrement quantity
+    if (matchingItem.quantity === 1) {
+      itemsInCart.splice(matchingIndex, 1);
+    } else {
+      matchingItem.quantity -= 1;
+      matchingItem.sum = matchingItem.quantity * matchingItem.price;
+    }
+
+    this.cartItems.set(itemsInCart);
+    this._persistCart();
+  }
+
   private _persistCart(): void {
     this.localStoreService.setItem(LOCAL_STORAGE_KEY, this.cartItems());
   }
