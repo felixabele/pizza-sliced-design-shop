@@ -1,8 +1,8 @@
 import { Component, signal, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Product, ProductApiService } from '~/entities/Product';
 import { ProductFilterComponent } from '~/features/product-filter';
-import { ProductCardComponent } from '~/widgets';
+import { Product, ProductApiService } from '~/entities/Product';
+import { ProductCardComponent } from '~/widgets/product-card';
 
 @Component({
   selector: 'app-product-overview-page',

@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'cart-page-empty-cart',
+  selector: 'page-cart-page-empty-cart',
   imports: [MatCardModule, MatButtonModule, RouterLink],
   templateUrl: './empty-cart.component.html',
 })

@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
-import { CartStateService } from '~/entities/Cart';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { CartStateService } from '~/entities/Cart';
 
 @Component({
   selector: 'feature-mini-cart',

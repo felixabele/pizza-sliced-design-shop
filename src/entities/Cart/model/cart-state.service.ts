@@ -1,6 +1,6 @@
 import { computed, inject, Injectable, Signal, signal } from '@angular/core';
-import { CartItem } from './cart.model';
 import { LocalStorageService } from '~/shared/api';
+import { CartItem } from './cart.model';
 
 const LOCAL_STORAGE_KEY = 'cart';
 

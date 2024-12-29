@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "npx eslint . && npx steiger ./src"
   },
   "private": true,
   "dependencies": {
@@ -28,13 +29,19 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.6",
+    "@angular-eslint/builder": "19.0.2",
+    "@angular-eslint/eslint-plugin": "19.0.2",
+    "@angular-eslint/eslint-plugin-template": "19.0.2",
+    "@angular-eslint/schematics": "19.0.2",
+    "@angular-eslint/template-parser": "19.0.2",
     "@angular/cli": "^19.0.6",
     "@angular/compiler-cli": "^19.0.5",
     "@feature-sliced/eslint-config": "^0.1.1",
     "@types/jasmine": "~5.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.29.3",
-    "@typescript-eslint/parser": "^4.29.3",
-    "eslint": "^7.32.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "angular-eslint": "^19.0.2",
+    "eslint": "^8.57.0",
     "eslint-plugin-boundaries": "^5.0.1",
     "eslint-plugin-import": "^2.31.0",
     "jasmine-core": "~5.1.0",
@@ -44,6 +51,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.4.2",
+    "steiger": "^0.5.3",
     "typescript": "~5.5.4"
   }
 }

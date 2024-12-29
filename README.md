@@ -28,13 +28,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Feature-Sliced-Packages
 
-`npm install -D eslint``
+`npm install -D eslint`
 `npm install -D @feature-sliced/eslint-config eslint-plugin-import eslint-plugin-boundaries`
 `npm install --save @feature-sliced/filesystem`
 `npm add -g @feature-sliced/cli`
+`npm i -D steiger`
 
 ## create pages
+
 `npx fsd pages product-overview product-detail cart --segments ui`
 
 ## create shared configs and api
+
 `npx fsd shared --segments api config`

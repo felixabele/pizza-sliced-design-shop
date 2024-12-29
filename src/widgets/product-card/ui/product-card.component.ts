@@ -1,9 +1,9 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { CurrencyPipe } from '@angular/common';
+import { AddToCartComponent } from '~/features/add-to-cart';
 import { Product } from '~/entities/Product';
 import { TagsComponent } from '~/shared';
-import { AddToCartComponent } from '~/features/add-to-cart';
 
 @Component({
   selector: 'entity-product-card',

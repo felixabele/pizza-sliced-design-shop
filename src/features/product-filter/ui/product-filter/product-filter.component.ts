@@ -6,9 +6,9 @@ import {
   input,
   model,
 } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { Product } from '~/entities/Product';
 import { ProductFilterService } from '../../model/product-filter.service';
-import { toObservable } from '@angular/core/rxjs-interop';
 import { PriceFilterComponent } from '../price-filter/price-filter.component';
 import { TagsFilterComponent } from '../tags-filter/tags-filter.component';
 

@@ -1,8 +1,8 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, computed, effect, inject } from '@angular/core';
-import { ProductFilterService } from '../../model/product-filter.service';
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
-import { CurrencyPipe } from '@angular/common';
+import { ProductFilterService } from '../../model/product-filter.service';
 
 @Component({
   selector: 'feature-price-filter',

@@ -1,7 +1,7 @@
 import { Component, inject, input } from '@angular/core';
-import { Product } from '~/entities/Product';
 import { MatButtonModule } from '@angular/material/button';
 import { CartStateService } from '~/entities/Cart';
+import { Product } from '~/entities/Product';
 
 @Component({
   selector: 'feature-add-to-cart',
