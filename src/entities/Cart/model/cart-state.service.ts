@@ -65,11 +65,15 @@ export class CartStateService {
   }
 
   private _persistCart(): void {
-    this.localStoreService.setItem(LOCAL_STORAGE_KEY, this.cartItems());
+    this.localStoreService.setItem<CartItem[]>(
+      LOCAL_STORAGE_KEY,
+      this.cartItems(),
+    );
   }
 
   private _restoreCart(): void {
-    const cartItems = this.localStoreService.getItem(LOCAL_STORAGE_KEY);
+    const cartItems =
+      this.localStoreService.getItem<CartItem[]>(LOCAL_STORAGE_KEY);
     this.cartItems.set(cartItems || []);
   }
 }

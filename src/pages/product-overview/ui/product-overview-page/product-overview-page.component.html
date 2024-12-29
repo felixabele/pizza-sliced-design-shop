@@ -6,7 +6,9 @@
 
   <div class="product-grid">
     @for (product of filteredProducts(); track $index) {
-      <entity-product-card [product]="product" />
+      <entity-product [product]="product">
+        <feature-add-to-cart [product]="product" />
+      </entity-product>
     }
   </div>
 </section>
