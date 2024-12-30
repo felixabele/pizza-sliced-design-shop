@@ -14,6 +14,7 @@ export class ProductApiService {
         shortDescription: 'Pizza with delicious fish, cheese and vegetables',
         image: '/assets/products/product-1.jpg',
         price: 100,
+        oldPrice: 120,
         tags: ['fish', 'tomato', 'basil'],
       },
       {
@@ -22,6 +23,7 @@ export class ProductApiService {
         shortDescription: 'Pizza with delicious ham, cheese and mushrooms',
         image: '/assets/products/product-2.jpg',
         price: 200,
+        oldPrice: 220,
         tags: ['ham', 'mushrooms', 'basil'],
       },
       {

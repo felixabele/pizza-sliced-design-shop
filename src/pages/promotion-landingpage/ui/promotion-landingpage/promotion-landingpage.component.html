@@ -1,0 +1,15 @@
+<h2>Currently the following Products have a special limited discount</h2>
+
+<section>
+  <div class="product-grid">
+    @for (product of discoutendProducts(); track $index) {
+      <entity-product [product]="product">
+        <feature-add-to-cart [product]="product" />
+      </entity-product>
+    }
+  </div>
+</section>
+
+<p>
+  <a mat-raised-button routerLink="/">Discover all our delicious products</a>
+</p>
