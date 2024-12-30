@@ -7,3 +7,13 @@ img {
   height: auto;
   margin-top: 1rem;
 }
+
+.price {
+  font-weight: bold;
+}
+
+.old-price {
+  color: #9b9b9b;
+  text-decoration: line-through;
+  padding-left: 1rem;
+}

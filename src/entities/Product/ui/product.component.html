@@ -5,7 +5,13 @@
   <img mat-card-image [src]="product().image" alt="{{ product().name }}" />
   <mat-card-content>
     <p>{{ product().shortDescription }}</p>
-    <p>Price: {{ product().price | currency }}</p>
+
+    <p class="price">
+      {{ product().price | currency }}
+      @if (product().oldPrice) {
+        <span class="old-price">{{ product().oldPrice | currency }}</span>
+      }
+    </p>
     <shared-ui-tags [tags]="product().tags" />
   </mat-card-content>
   <mat-card-actions>
