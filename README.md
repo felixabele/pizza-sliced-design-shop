@@ -2,6 +2,8 @@
 
 This project is a basic and rudimentary e-commerce application to showcase and discover the use of [Feature-Sliced Design](https://feature-sliced.design/) in an Angular application.
 
+Deployed Preview: https://felixabele.github.io/pizza-sliced-design-shop/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

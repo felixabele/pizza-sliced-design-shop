@@ -40,6 +40,7 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
+    "angular-cli-ghpages": "^2.0.3",
     "angular-eslint": "^19.0.2",
     "eslint": "^8.57.0",
     "eslint-plugin-boundaries": "^5.0.1",
